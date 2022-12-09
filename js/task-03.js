@@ -13,12 +13,13 @@ const images = [
   },
 ]
 
-const listCss = document.getElementsByClassName('gallery')[0]
-listCss.style.display = 'flex'
-listCss.style.gap = '10px'
-listCss.style.listStyle = 'none'
-listCss.style.justifyContent = 'space-between'
-listCss.style.alignItems = 'center'
+const galleries = document.querySelector('.gallery')
+
+galleries.style.display = 'flex'
+galleries.style.gap = '10px'
+galleries.style.listStyle = 'none'
+galleries.style.justifyContent = 'space-between'
+galleries.style.alignItems = 'center'
 
 const gallery = images
   .map(
@@ -27,4 +28,4 @@ const gallery = images
   )
   .join('')
 
-document.querySelector('.gallery').insertAdjacentHTML('afterbegin', gallery)
+galleries.insertAdjacentHTML('afterbegin', gallery)
