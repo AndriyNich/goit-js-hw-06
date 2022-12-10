@@ -2,11 +2,6 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`
 }
 
-const outputContainer = document.querySelector('#boxes')
-outputContainer.style.display = 'flex'
-outputContainer.style.flexWrap = 'wrap'
-outputContainer.style.gap = '10px'
-
 const getRandomValidHexColor = () => {
   let color = getRandomHexColor()
   if (color.length === 7) {
@@ -20,7 +15,12 @@ const getRandomValidHexColor = () => {
   ].join('')
 }
 
-const createElement = (element, index, array) => {
+const outputContainer = document.querySelector('#boxes')
+outputContainer.style.display = 'flex'
+outputContainer.style.flexWrap = 'wrap'
+outputContainer.style.gap = '10px'
+
+const createElement = (element, index) => {
   const divRef = document.createElement('div')
   divRef.style.backgroundColor = getRandomValidHexColor()
   divRef.style.width = 30 + 10 * index + 'px'
