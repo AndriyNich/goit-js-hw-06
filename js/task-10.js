@@ -32,25 +32,25 @@ const createElements = amount => {
   return Array(amount).fill(0).map(createElement)
 }
 
-const clearDiv = container => {
-  container.innerHTML = ''
+const clearDiv = () => {
+  outputContainer.innerHTML = ''
 }
 
-const paintDiv = container => {
+const paintDiv = () => {
   const amount = parseInt(document.querySelector('input').value)
   if (!amount) {
     alert('Enter number!')
     return
   }
 
-  clearDiv(container)
-  container.append(...createElements(amount))
+  clearDiv()
+  outputContainer.append(...createElements(amount))
 }
 
 document
   .querySelector('button[data-create]')
-  .addEventListener('click', paintDiv.bind(this, outputContainer))
+  .addEventListener('click', paintDiv)
 
 document
   .querySelector('button[data-destroy]')
-  .addEventListener('click', clearDiv.bind(this, outputContainer))
+  .addEventListener('click', clearDiv)

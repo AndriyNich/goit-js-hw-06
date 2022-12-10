@@ -1,5 +1,4 @@
-const form = document.querySelector('.login-form')
-form.addEventListener('submit', callbackSubmit)
+document.querySelector('.login-form').addEventListener('submit', callbackSubmit)
 
 function callbackSubmit(event) {
   event.preventDefault()
